@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import * as colors from '../assets/colors';
+
 export default createGlobalStyle`
   * {
     margin: 0;
@@ -9,14 +11,12 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #312E38;
-    color: #fff;
+    background-color: ${colors.lightGray};
+    margin: 0;
+    color: ${colors.lightBlack};
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
-  }
-
-  body, input, button {
-    font-family: '"Montserrat", sans-serif';
-    font-size: 14;
   }
 
   button {

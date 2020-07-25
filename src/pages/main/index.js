@@ -1,13 +1,18 @@
 import React from 'react';
-import Header from '../../components/Header';
+import HostGatorHeader from '../../components/hostgator-header';
+import Header from './Header';
 
-import { MainPage } from './styles';
+import {
+  MainPage
+} from './styles';
 
 const Main = () => {
   return (
     // <PlanosContextProvider>
       <MainPage>
+        <HostGatorHeader />
         <Header />
+
       </MainPage>
     // </PlanosContextProvider>
   )
