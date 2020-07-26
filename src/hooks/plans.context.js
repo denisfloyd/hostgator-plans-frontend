@@ -1,15 +1,25 @@
-import React, { createContext, useEffect, useState, useRef } from 'react';
+import React, {
+  createContext,
+  useEffect,
+  useState,
+  useRef,
+  useContext
+} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import api from '../services/api';
+import * as productsActions from '../stores/plans/actions';
 
 const PlansContext = createContext();
 
-export const PlansContextProvider = props => {
+const PlansContextProvider = props => {
   const dispatch = useDispatch();
   const { children } = props;
 
-  const allPlans = useSelector(state => state.plans.allPlans);
+  const allPlans = useSelector(state => {
+    console.log(state);
+    return state.allPlans
+  });
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const [paymentPeriod, setPaymentPeriod] = useState('triennially');
@@ -20,17 +30,16 @@ export const PlansContextProvider = props => {
   ]);
 
   useEffect(() => {
-    resizeCanva();
+    // resizeCanva();
 
-    axios.get('https://7ac2b8ab-f3e5-4534-863d-90dd424a6405.mock.pstmn.io/prices').then(response => {
-      const productArray = [];
-      const { products } = response.data.shared;
-      Object.values(products).forEach(product => {
-        productArray.push(product);
-      });
-      dispatch(productsActions.setProducts(productArray));
+    api.get('prices').then(response => {
+      const data = response.data.shared ?
+        response.data : { shared: { products: {} } };
+
+      // dispatch to reducer and distribute
+      dispatch(productsActions.setPlans(data));
     });
-  }, []);
+  }, [dispatch]);
 
   const data = {
     allPlans,

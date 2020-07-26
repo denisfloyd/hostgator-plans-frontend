@@ -38,7 +38,7 @@ export const Container = styled.div`
 
 export const HeaderContainer = styled.div`
   color: white;
-  height: 350px;
+  height: 320px;
   background-color: ${colors.darkBlue};
   line-height: 1.5;
   font-weight: 300;
@@ -105,11 +105,10 @@ export const DescriptionView = styled.div`
 `;
 
 export const BoxContainer = styled.div`
-  height: 100px;
+  height: 65px;
   width: 100%;
   overflow: hidden;
-  bottom: 1px;
-  margin-bottom: -100px;
+  bottom: 0px;
   position: relative;
   z-index: 0;
 

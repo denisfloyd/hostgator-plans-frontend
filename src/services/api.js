@@ -1,14 +1,7 @@
-const API_PATH = "https://6dd1804f-a914-4c99-a1ed-58adca2bca74.mock.pstmn.io/prices";
+import axios from 'axios';
 
-const getPlans = async () => {
-  try {
-    const jsonData = await fetch(API_PATH);
-    const data = await jsonData.json();
+const api = axios.create({
+  baseURL: 'https://6dd1804f-a914-4c99-a1ed-58adca2bca74.mock.pstmn.io',
+});
 
-    return data.shared ? data : { shared: { products: {} } };
-  } catch (error) {
-    alert(error);
-  }
-};
-
-export { getPlans };
+export default api;

@@ -1,6 +1,10 @@
 import React from 'react';
+
 import HostGatorHeader from '../../components/hostgator-header';
 import Header from './Header';
+import PeriodSelector from './SelectPeriod';
+
+import AppProvider from '../../hooks';
 
 import {
   MainPage
@@ -8,13 +12,14 @@ import {
 
 const Main = () => {
   return (
-    // <PlanosContextProvider>
+    <AppProvider>
       <MainPage>
         <HostGatorHeader />
         <Header />
+        <PeriodSelector />
 
       </MainPage>
-    // </PlanosContextProvider>
+    </AppProvider>
   )
 };
 

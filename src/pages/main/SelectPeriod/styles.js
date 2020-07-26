@@ -1,63 +1,73 @@
-@import '../../assets//shared_sass/colors_and_constants.scss';
-@import '../../assets/shared_sass/gird.scss';
+import React from 'react';
+import styled from 'styled-components';
 
-.PeriodSelector {
-    margin: 0 auto;
-    text-align: center;
-    color: $blued;
-    margin-bottom: 60px;
+import {
+  RadioGroup,
+  styled as MaterialStyled,
+  FormControlLabel,
+  Typography
+} from '@material-ui/core';
 
-    p {
-        display: inline-block;
-        margin-bottom: 15px;
+import * as colors from '../../../assets/colors';
+
+export const Container = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 42px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 37px;
+  }
+
+  @media screen and (min-width: 1920px) {
+    padding-top: 50px;
+  }
+`;
+
+export const SelectPeriodTitle = MaterialStyled(
+  ({ ...rest }) => <Typography {...rest} />)({
+  color: `${colors.darkBlue}`,
+  fontSize: '14px',
+  fontWeight: 400,
+  lineHeight: '26px',
+  textAlign: 'center',
+  marginBottom: '7px',
+});
+
+export const ContentRadio = MaterialStyled(({...rest} ) => <RadioGroup {...rest} />)({
+  backgroundColor: colors.white,
+  borderRadius: '21px',
+  border: `1px solid ${colors.lightBlue}`,
+  height: '41px',
+  width: '290px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between'
+});
+
+export const RadioButtonPanel = MaterialStyled((
+  { active, ...rest }) => <FormControlLabel {...rest} />)({
+  backgroundColor: props => (props.active ?
+     `${colors.lightBlue}` : `${colors.white}`),
+  borderRadius: '21px',
+  height: '39px',
+  width: props => (props.active ? '105px' : '91px'),
+  marginLeft: 'unset',
+  marginRight: 'unset',
+  border: props => (props.active ? `1px solid ${colors.lightBlue}` : '0px'),
+
+  color: props => (props.active ? colors.white : `${colors.blue}`),
+  fontWeight: props => (props.active ? 700 : 400),
+  fontSize: '16px',
+  lineHeight: 23,
+
+  '& .MuiRadio-colorSecondary': {
+    color: `${colors.skyBlue}`,
+    '&.Mui-checked': {
+      color: `${colors.white}`
     }
-
-    .BtnsSelector {
-        width: 320px;
-        height: 41px;
-        margin: 0 auto;
-        background-color: $white;
-        border: 1px solid $bluedTrans;
-        box-shadow: 0px 2px 4px $bluel;
-        border-radius: 21px;
-
-        a {
-            height: 41px;
-            opacity: 1;
-            border: none;
-            border-radius: 21px;
-            width: 104px;
-            text-decoration: none;
-            color: $blued;
-            box-sizing: border-box;
-            display: inline-block;
-            padding: 0;
-
-            &:hover {
-                background: $bluelTrans;
-            }
-
-            &:nth-of-type(n + 2) {
-                margin-left: 4px;
-            }
-
-            &.Active {
-                background-color: $bluen;
-                color: $white;
-                font-weight: bold;
-                cursor: default;
-            }
-        }
-
-        img {
-            margin-right: 5px;
-            vertical-align: middle;
-        }
-
-        p {
-            margin: 0;
-            line-height: 41px;
-            vertical-align: middle;
-        }
-    }
-}
+  }
+});
