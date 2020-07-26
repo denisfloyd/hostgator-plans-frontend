@@ -3,7 +3,8 @@ import React, {
   useEffect,
   useState,
   useRef,
-  useContext
+  useContext,
+  useCallback
 } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -16,11 +17,13 @@ const PlansContextProvider = props => {
   const dispatch = useDispatch();
   const { children } = props;
 
-  const allPlans = useSelector(state => {
-    console.log(state);
-    return state.allPlans
-  });
+  // const allPlans = useSelector(state => {
+  //   console.log(state);
+  //   return state.allPlans
+  // });
+  const [allPlans, setAllPlans] = useState([]);
 
+  const [width, setWidth] = useState(window.outerWidth);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [paymentPeriod, setPaymentPeriod] = useState('triennially');
   const [paymentOptions, setPaymentOptions] = useState([
@@ -29,24 +32,74 @@ const PlansContextProvider = props => {
     { value: 'monthly', label: '1 mês' }
   ]);
 
+  const carouselRef = useRef();
+
   useEffect(() => {
-    // resizeCanva();
+    async function loadPlans() {
+      api.get('prices').then(response => {
+        const data = response.data.shared ?
+          response.data.shared: {};
 
-    api.get('prices').then(response => {
-      const data = response.data.shared ?
-        response.data : { shared: { products: {} } };
+        const { products } = data;
+        const dataPlansArray = [];
 
-      // dispatch to reducer and distribute
-      dispatch(productsActions.setPlans(data));
-    });
+        Object.values(products).forEach(plan => {
+          dataPlansArray.push(plan);
+        })
+
+        setAllPlans(dataPlansArray);
+
+        // dispatch to reducer and distribute
+        dispatch(productsActions.setPlans(dataPlansArray));
+      });
+    }
+
+    loadPlans();
   }, [dispatch]);
+
+  const scrollTo = newValue => {
+    let newScrollPosition = scrollPosition;
+
+    if (newScrollPosition + newValue >= width * allPlans.length) {
+      newScrollPosition = width * allPlans.length;
+    } else if (newScrollPosition + newValue < width * allPlans.length && newValue > 0) {
+      newScrollPosition += newValue;
+    }
+
+    if (newScrollPosition + newValue <= 0) {
+      newScrollPosition = 0;
+    } else if (newScrollPosition + newValue > 0 && newValue < 0) {
+      newScrollPosition += newValue;
+    }
+
+    carouselRef.current.scroll({
+      top: 0,
+      left: newScrollPosition,
+      behavior: 'smooth'
+    });
+    setScrollPosition(newScrollPosition);
+  };
+
+  // useEffect(() => {
+  //   // resizeCanva();
+
+  //   api.get('prices').then(response => {
+  //     const data = response.data.shared ?
+  //       response.data : { shared: { products: {} } };
+
+  //     // dispatch to reducer and distribute
+  //     dispatch(productsActions.setPlans(data));
+  //   });
+  // }, [dispatch]);
 
   const data = {
     allPlans,
-    // carouselRef,
+    carouselRef,
     paymentPeriod,
     setPaymentPeriod,
     paymentOptions,
+    scrollTo,
+    width
   };
 
   return (

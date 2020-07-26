@@ -3,6 +3,7 @@ import React from 'react';
 import HostGatorHeader from '../../components/hostgator-header';
 import Header from './Header';
 import PeriodSelector from './SelectPeriod';
+import PlansCarouselView from './PlansCarouselView';
 
 import AppProvider from '../../hooks';
 
@@ -19,7 +20,8 @@ const Main = () => {
         <Header /> { /* App Header with absolute images */ }
 
         <PlansViewContainer>
-          <PeriodSelector />
+          <PeriodSelector /> { /* Select plan period to payment */}
+          <PlansCarouselView />
         </PlansViewContainer>
 
       </MainPage>
