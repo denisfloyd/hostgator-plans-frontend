@@ -10,8 +10,6 @@ export const Container = styled.div`
 `;
 
 export const ButtonNavigation = MaterialStyled(({
-  itemsWidth,
-  windowWidth,
   ...rest }) =>
   <IconButton {...rest} />)({
     width: '35px',
@@ -22,7 +20,7 @@ export const ButtonNavigation = MaterialStyled(({
     justifyContent: 'center',
     position: 'absolute',
     top: 'calc(50%)',
-    zIndex: 99,
+    zIndex: 3,
 
     '&.leftArrow': {
       left: '5px',

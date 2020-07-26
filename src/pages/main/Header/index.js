@@ -4,6 +4,8 @@ import ArrowDropDownButton from '../../../assets/icon_arrow_down.svg';
 
 import CheckIcon from '@material-ui/icons/Check';
 
+import { useDataPlans } from "../../../hooks/plans.context";
+
 import {
   Container,
   HeaderContainer,
@@ -16,6 +18,8 @@ import {
 } from './styles'
 
 const Header = () => {
+  const { carouselRef } = useDataPlans();
+
   return (
       <>
       <Container>
@@ -52,11 +56,18 @@ const Header = () => {
           </Content>
         </HeaderContainer>
 
-        <BoxContainer>
+        <BoxContainer >
           <svg viewBox="0 0 500 50" preserveAspectRatio="none">
             <path d="M0.00,00.00 C250.00,20 250.00,20 500.00,00.00 L500.00,0.00 L0.00,0.00 Z"></path>
           </svg>
-          <a href="/" title="Go to Plans" alt="Go to Plans">
+
+          <a title="Go to Plans" alt="Go to Plans" onClick={() =>
+            window.scroll({
+              top: carouselRef.current.offsetHeight,
+              left: 0,
+              behavior: 'smooth'
+            })
+          }>
             <img src={ArrowDropDownButton} alt="ButtomArrowDown" />
           </a>
         </BoxContainer>

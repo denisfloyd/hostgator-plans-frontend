@@ -76,6 +76,10 @@ export const DescriptionHeader = styled.div`
     @media only screen and (max-width: 430px) {
       font-size: 25px;
     }
+
+    @media only screen and (max-width: 321px) {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -122,6 +126,7 @@ export const BoxContainer = styled.div`
     left: 50%;
     width: 50px;
     margin-left: -25px;
+    cursor: pointer;
 
     img {
       width: 100%;

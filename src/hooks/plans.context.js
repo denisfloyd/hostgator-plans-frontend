@@ -23,7 +23,7 @@ const PlansContextProvider = props => {
   // });
   const [allPlans, setAllPlans] = useState([]);
 
-  const [width, setWidth] = useState(window.outerWidth);
+  const [width, setWidth] = useState(280);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [paymentPeriod, setPaymentPeriod] = useState('triennially');
   const [paymentOptions, setPaymentOptions] = useState([
@@ -60,9 +60,9 @@ const PlansContextProvider = props => {
   const scrollTo = newValue => {
     let newScrollPosition = scrollPosition;
 
-    if (newScrollPosition + newValue >= width * allPlans.length) {
-      newScrollPosition = width * allPlans.length;
-    } else if (newScrollPosition + newValue < width * allPlans.length && newValue > 0) {
+    if (newScrollPosition + newValue >= 280 * allPlans.length) {
+      newScrollPosition = 280 * allPlans.length;
+    } else if (newScrollPosition + newValue < 280 * allPlans.length && newValue > 0) {
       newScrollPosition += newValue;
     }
 

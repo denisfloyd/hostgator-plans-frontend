@@ -20,7 +20,7 @@ import {
 } from './styles';
 
 const PlansCarouselView = () => {
-  const { allPlans, scrollTo, carouselRef, width } = useDataPlans();
+  const { allPlans, scrollTo, carouselRef } = useDataPlans();
 
   const plansImages = {
     'Plano P': planoP,
@@ -28,16 +28,19 @@ const PlansCarouselView = () => {
     'Plano Turbo': planoTurbo
   };
 
+  console.log(plansImages['Plano P']);
+
   return (
     <Container>
       {allPlans.length > 0 ? (
         <>
-          <ButtonNavigation onClick={() => scrollTo((266 + 14) * -1)}>
+          <ButtonNavigation onClick={() => scrollTo((266 + 14) * -1)}
+            className="leftArrow">
             <ArrowBackIosIcon />
           </ButtonNavigation>
 
           <CarouselContainer ref={carouselRef}>
-            <CarouselView size={allPlans.length} windowWidth={width}>
+            <CarouselView size={allPlans.length}>
               {allPlans.map(plan => {
                 const image = plansImages[plan.name];
                 return (
@@ -49,7 +52,8 @@ const PlansCarouselView = () => {
             </CarouselView>
           </CarouselContainer>
 
-          <ButtonNavigation onClick={() => scrollTo(266 + 14)}>
+          <ButtonNavigation onClick={() => scrollTo(266 + 14)}
+            className="rightArrow">
             <ArrowForwardIosIcon />
           </ButtonNavigation>
         </>
