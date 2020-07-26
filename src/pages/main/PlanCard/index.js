@@ -13,7 +13,9 @@ import {
   TextYearFree,
   IconInfoContainer,
   DiscountContainer,
-  DiscountText
+  DiscountText,
+  CardInfo,
+  PlanText
 } from './styles';
 
 export const PlanCard = props => {
@@ -113,7 +115,39 @@ export const PlanCard = props => {
 
       <SeparatorLine />
 
-      {/* <CardInfoSection plan={plan} /> */}
+      <CardInfo>
+        <PlanText>
+          <span>{plan.name === 'Plano P' ? 'Para 1 site' : 'Sites Ilimitados'}</span>
+        </PlanText>
+
+        <PlanText>
+          <span>
+            <b>{plan.name === 'Plano Turbo' ? '150' : '100'} GB</b> de Armazenamento
+          </span>
+        </PlanText>
+
+        <PlanText>
+          <span>
+            Contas de E-mail <b>Ilimitadas</b>
+          </span>
+        </PlanText>
+
+        <PlanText>
+          <span>
+            Criador de Sites{' '}
+            <b>
+              <u>Grátis</u>
+            </b>
+          </span>
+        </PlanText>
+
+        <PlanText>
+          <span>
+            Certificado SSL <strong>Grátis</strong> (HTTPS)
+          </span>
+        </PlanText>
+      </CardInfo>
+
     </Container>
   );
 };

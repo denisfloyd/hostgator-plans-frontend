@@ -9,6 +9,7 @@ import AppProvider from '../../hooks';
 
 import {
   MainPage,
+  HeaderContainer,
   PlansViewContainer
 } from './styles';
 
@@ -16,8 +17,10 @@ const Main = () => {
   return (
     <AppProvider>
       <MainPage>
-        <HostGatorHeader /> { /* HostGator Header with logo */ }
-        <Header /> { /* App Header with absolute images */ }
+        <HeaderContainer>
+          <HostGatorHeader /> { /* HostGator Header with logo */ }
+          <Header /> { /* App Header with absolute images */ }
+        </HeaderContainer>
 
         <PlansViewContainer>
           <PeriodSelector /> { /* Select plan period to payment */}

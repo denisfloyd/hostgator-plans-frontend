@@ -18,7 +18,7 @@ export const Container = styled.div`
     width: 95%;
     background-color: ${props => (props.highlighted ? `${colors.orange}` : 'transparent')};
     display: block;
-    top: -15px;
+    top: -10px;
     position: relative;
     border-radius: 4px 4px 0px 0px;
     align-self: center;
@@ -161,6 +161,26 @@ export const DiscountText = styled.span`
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-  flex: none
+  flex: none;
 `;
 
+export const CardInfo = styled.div`
+  padding: 24px 15px 30px;
+
+  & p:nth-child(1),
+  & p:nth-child(3) {
+    & span {
+      border-bottom: 1px dashed ${colors.lightBlue};
+      padding-bottom: 5px;
+    }
+  }
+`;
+
+export const PlanText = styled.p`
+  color: ${colors.lightBlack};
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: left;
+  margin: 0px;
+`;
