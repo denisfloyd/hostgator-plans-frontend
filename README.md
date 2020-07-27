@@ -13,6 +13,18 @@
 Explanations about the challenge can be found in the link below in Portuguese.
 https://docs.google.com/document/d/1ueahBMI4MIegWTP0QATYt2MMhFTOyCwHaXiGclZ9jZg/edit
 
+<h4>Techs</h4>
+<ul>
+  <li> Javascript </li>
+  <li> Reactjs
+  <li> redux
+  <li> context-api
+  <li> axios
+  <li> styled-components
+  <li> react-animations
+</ul>
+
+
 ### How to execute
 
 1. Clone the project on your computer via Download (option Code -> Download ZIP)
