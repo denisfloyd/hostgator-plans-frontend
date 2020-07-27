@@ -1,68 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img align="center" alt="Hostgator" src="https://hospedagem-de-sites.info/wp-content/uploads/cupom-hostgator-logo-480-270.png" />
+</p>
 
-## Available Scripts
+<h3 align="center">
+  Challenge HostGator: Host plans Web page.
+</h3>
+<p align="center">
+  <i>Desafio HostGator: Página Web de exibição de Planos.</i>
+</p>
 
-In the project directory, you can run:
+### About
+Explanations about the challenge can be found in the link below in Portuguese.
+https://docs.google.com/document/d/1ueahBMI4MIegWTP0QATYt2MMhFTOyCwHaXiGclZ9jZg/edit
 
-### `yarn start`
+### How to execute
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone the project on your computer via Download or Git
+    - If you don't have Git installed, follow the link ``https://git-scm.com/``
+2. Download Node if you have not configured it on your computer;
+    - ``https://nodejs.org/en/``
+    - The npm package that we will use is usually installed together with Node.
+3. In the terminal or prompt(cmd), access the project root;
+4. At the root of the project, run `npm i` command to download the dependencies;
+    - A node_modules folder will be created at the root of the project with the dependencies downloaded.
+5. Run `npm start` to run the project;
+6. The project will be available at ``http://localhost:3000``, check your browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Como executar (pt-br)
 
-### `yarn test`
+1. Clone o projeto em seu computador através do Download or pelo Git
+    - Caso você não tenha o Git instalado, siga o link ``https://git-scm.com/``
+2. Baixe o Node caso você não tenha ele configurado em seu computador;
+    - ``https://nodejs.org/en/``
+    - O pacote npm que iremos utilizar geralmente virá instalado juntamente com o Node.
+3. No terminal ou prompt de comandos (cmd), acesse a raiz do projeto;
+4. Na raiz do projeto, execute o comando `npm i` para baixar as dependências do projeto;
+    - Uma pasta node_modules será criada na raiz do projeto com as dependências baixadas.
+5. Execute `npm start` para executar o projeto;
+6. O projeto estará disponível em ``http://localhost:3000``, verifique o seu navegaor.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Application template
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
