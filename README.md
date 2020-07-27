@@ -37,10 +37,16 @@ https://docs.google.com/document/d/1ueahBMI4MIegWTP0QATYt2MMhFTOyCwHaXiGclZ9jZg/
 4. Na raiz do projeto, execute o comando `npm i` para baixar as dependências do projeto;
     - Uma pasta node_modules será criada na raiz do projeto com as dependências baixadas.
 5. Execute `npm start` para executar o projeto;
-6. O projeto estará disponível em ``http://localhost:3000``, verifique o seu navegaor.
+6. O projeto estará disponível em ``http://localhost:3000``, verifique o seu navegador.
 
 ### Application template
 
+#### Web version
+<p align="center">
+  <img align="center" alt="Hostgator" src="git_assets/hostgator_webplans.png" />
+</p>
+
+#### Web mobile version
 <p align="center">
   <img src="git_assets/hostgator_webplans_mobile.gif">
 </p>
