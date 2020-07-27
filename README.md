@@ -41,3 +41,6 @@ https://docs.google.com/document/d/1ueahBMI4MIegWTP0QATYt2MMhFTOyCwHaXiGclZ9jZg/
 
 ### Application template
 
+<p align="center">
+  <img src="git_assets/hostgator_webplans_mobile.gif">
+</p>
