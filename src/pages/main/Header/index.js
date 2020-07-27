@@ -63,7 +63,7 @@ const Header = () => {
 
           <a title="Go to Plans" alt="Go to Plans" onClick={() =>
             window.scroll({
-              top: carouselRef.current.offsetHeight,
+              top: carouselRef.current.offsetHeight - 200,
               left: 0,
               behavior: 'smooth'
             })

@@ -5,7 +5,7 @@ import Main from '../pages/main';
 const Routers = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Main} />
+      <Route path="/" component={Main} />
     </Switch>
   </BrowserRouter>
 );

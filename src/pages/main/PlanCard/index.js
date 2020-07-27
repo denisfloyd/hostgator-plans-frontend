@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { Link } from 'react-router-dom';
 
 import { useDataPlans } from '../../../hooks/plans.context';
 
@@ -90,14 +91,16 @@ export const PlanCard = props => {
           /mês*
         </PriceByMonthContainer>
 
-        <ButtonContainer
-          isSelected={plan.name === 'Plano M'}
-          onClick={() => {
-            window.location.href = `/?a=add&pid=${plan.id}&billingcycle=${paymentPeriod}&promocode=PROMOHG40`;
-          }}
-        >
-          Contrate Agora
-        </ButtonContainer>
+        <Link to={`/?a=add&pid=${plan.id}&billingcycle=${paymentPeriod}&promocode=PROMOHG40`} >
+          <ButtonContainer
+            isSelected={plan.name === 'Plano M'}
+            // onClick={() => {
+            //   window.location.href = `/?a=add&pid=${plan.id}&billingcycle=${paymentPeriod}&promocode=PROMOHG40`;
+            // }}
+          >
+            Contrate Agora
+          </ButtonContainer>
+        </Link>
 
         <TextYearFree>
           1 ano de Domínio Grátis&nbsp;

@@ -62,6 +62,11 @@ export const SeparatorLine = styled.div`
 
 export const CardPrices = styled.div`
   padding: 30px 15px 35px;
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
 `;
 
 export const PriceContainer = styled.div`
@@ -104,14 +109,11 @@ export const ButtonContainer = MaterialStyled((
   width: '229px',
   textTransform: 'capitalize',
 
-  '&:hover': {
-    opacity: 0.8,
-    color: `${shade(0.2, '#f4ede8')} !important`
-  },
 
-  '& .MuiButton-root:hover': {
+  '&.MuiButton-root:hover': {
+    backgroundColor: `${colors.orange}`,
     opacity: '0.8 !important',
-    color: `${shade(0.2, '#f4ede8')} !important`
+    color: `${shade(0.05, '#f4ede8')} !important`
   }
 });
 
